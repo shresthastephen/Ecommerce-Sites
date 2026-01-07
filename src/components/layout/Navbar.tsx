@@ -53,7 +53,7 @@ export function Navbar() {
         <nav className="flex h-16 md:h-20 items-center justify-between gap-4">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 shrink-0">
-            <div className="w-8 h-8 md:w-10 md:h-10 rounded-full gold-gradient flex items-center justify-center">
+            <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gold-gradient flex items-center justify-center">
               <span className="font-serif font-bold text-sm md:text-lg text-primary-foreground">
                 D
               </span>
@@ -201,3 +201,6 @@ export function Navbar() {
 //     </button>
 //   );
 // }
+
+
+
