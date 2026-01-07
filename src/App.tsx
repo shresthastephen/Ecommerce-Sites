@@ -1,9 +1,20 @@
+import { Navbar } from "./components/layout/Navbar";
+import { Footer } from "./components/layout/Footer";
+import { Outlet } from "react-router-dom";
+
 export default function App() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-900">
-      <h1 className="text-4xl font-bold text-white">
-        Tailwind CSS v3 is working 🚀
-      </h1>
+    <div className="min-h-screen flex flex-col">
+      {/* Navbar */}
+      <Navbar />
+
+      {/* Page content */}
+      <main className="flex-1">
+        <Outlet />
+      </main>
+
+      {/* Footer */}
+      <Footer />
     </div>
-  )
+  );
 }

@@ -1,0 +1,144 @@
+import { Link } from "react-router-dom";
+import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+
+export function Footer() {
+  return (
+    <footer className="bg-secondary/50 border-t border-border">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Brand */}
+          <div>
+            <Link to="/" className="flex items-center gap-2 mb-4">
+              <div className="w-10 h-10 rounded-full gold-gradient flex items-center justify-center">
+                <span className="font-serif font-bold text-lg text-primary-foreground">
+                  D
+                </span>
+              </div>
+              <span className="font-serif text-xl font-semibold">
+                Divine Arts
+              </span>
+            </Link>
+
+            <p className="text-sm text-muted-foreground mb-4">
+              Handcrafted sacred sculptures bringing divinity to your home.
+              Each piece is crafted with devotion and artistry.
+            </p>
+
+            <div className="flex gap-4">
+              <SocialIcon label="Facebook">
+                <Facebook />
+              </SocialIcon>
+              <SocialIcon label="Instagram">
+                <Instagram />
+              </SocialIcon>
+              <SocialIcon label="Twitter">
+                <Twitter />
+              </SocialIcon>
+              <SocialIcon label="YouTube">
+                <Youtube />
+              </SocialIcon>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <FooterColumn title="Quick Links">
+            <FooterLink to="/">Home</FooterLink>
+            <FooterLink to="/shops">All Products</FooterLink>
+            <FooterLink to="/shops?filter=new">New Arrivals</FooterLink>
+            <FooterLink to="/shops?filter=top">Best Sellers</FooterLink>
+          </FooterColumn>
+
+          {/* Information */}
+          <FooterColumn title="Information">
+            <FooterLink to="/about">About Us</FooterLink>
+            <FooterLink to="/contact">Contact</FooterLink>
+            <FooterLink to="/privacy">Privacy Policy</FooterLink>
+            <FooterLink to="/terms">Terms & Conditions</FooterLink>
+          </FooterColumn>
+
+          {/* Contact */}
+          <div>
+            <h4 className="footer-title">Contact Us</h4>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li>123 Temple Street</li>
+              <li>Mumbai, Maharashtra 400001</li>
+              <li>India</li>
+              <li className="pt-2">
+                <a
+                  href="mailto:info@divinearts.com"
+                  className="footer-link"
+                >
+                  info@divinearts.com
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+911234567890"
+                  className="footer-link"
+                >
+                  +91 123 456 7890
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom */}
+        <div className="border-t border-border mt-8 pt-6 text-center text-sm text-muted-foreground">
+          © {new Date().getFullYear()} Divine Arts. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+/* ---------- Reusable Helpers ---------- */
+
+function FooterColumn({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div>
+      <h4 className="footer-title">{title}</h4>
+      <ul className="space-y-2">{children}</ul>
+    </div>
+  );
+}
+
+function FooterLink({
+  to,
+  children,
+}: {
+  to: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <li>
+      <Link to={to} className="footer-link text-sm">
+        {children}
+      </Link>
+    </li>
+  );
+}
+
+function SocialIcon({
+  children,
+  label,
+}: {
+  children: React.ReactNode;
+  label: string;
+}) {
+  return (
+    <a
+      href="#"
+      aria-label={label}
+      className="p-2 rounded-md text-muted-foreground hover:text-primary hover:bg-muted transition"
+    >
+      {children}
+    </a>
+  );
+}
