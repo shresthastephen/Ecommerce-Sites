@@ -4,11 +4,11 @@ import type { Product, CategoryInfo } from "../types/product";
 
 export const categoryImages = {
   ganesha: {
-    hero: "https://images.unsplash.com/photo-1567591370504-80c7e429e926?w=1200&h=800&fit=crop",
+    hero: "https://buddhacraftnepal.com/cdn/shop/files/buddha-craft.jpg?v=1716383157&width=3840",
     square: "https://images.unsplash.com/photo-1567591370504-80c7e429e926?w=400&h=400&fit=crop",
   },
   buddha: {
-    hero: "https://images.unsplash.com/photo-1609619385002-f40f1df827b8?w=1200&h=800&fit=crop",
+    hero: "https://newbusinessage.prixacdn.net/img/news/20211215112441_20170913113102_sect.jpg",
     square: "https://images.unsplash.com/photo-1609619385002-f40f1df827b8?w=400&h=400&fit=crop",
   },
   shiva: {

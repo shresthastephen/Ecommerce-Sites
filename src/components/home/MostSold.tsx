@@ -1,0 +1,26 @@
+import { products } from "../../mockdata/products";
+import { ProductCard } from "../product/ProductCard";
+
+export function MostSold() {
+  const bestSellers = products.filter((p) => p.isBestSeller).slice(0, 8);
+
+  return (
+    <section className="py-12 md:py-16 bg-secondary/30">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-8">
+          <h2 className="text-2xl md:text-3xl font-serif font-semibold mb-2">
+            Most Sold Products
+          </h2>
+          <p className="text-muted-foreground">
+            Our most popular divine sculptures loved by customers
+          </p>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+          {bestSellers.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
